@@ -1,0 +1,38 @@
+import React from 'react';
+import './footer.css';
+
+function Footer() {
+    return ( <div className="footer">
+<div className="footer-logo">
+    <img src="\assets\logo_big.png" alt="" />
+    <p>SHOPPER</p>
+    </div>
+    <ul className="footer-links">
+        <li>Company</li>
+        <li>Products</li>
+        <li>Offices</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <div className="footer-social-icon">
+        <div className="footer-icon-container">
+            <img src="\assets\instagram_icon.png" alt="" />
+         </div>
+
+         <div className="footer-icon-container">
+            <img src="\assets\pintester_icon.png" alt="" />
+         </div>
+
+         <div className="footer-icon-container">
+            <img src="\assets\whatsapp_icon.png" alt="" />
+         </div>
+    </div>
+
+    <div className="footer-copyright">
+        <hr/>
+        <p>Copyright @ 2025</p>
+    </div>
+    </div> );
+}
+
+export default Footer;
