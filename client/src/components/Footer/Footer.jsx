@@ -1,38 +1,53 @@
 import React from 'react';
 import './footer.css';
 
-function Footer() {
-    return ( <div className="footer">
-<div className="footer-logo">
-    <img src="\assets\logo_big.png" alt="" />
-    <p>SHOPPER</p>
-    </div>
-    <ul className="footer-links">
-        <li>Company</li>
-        <li>Products</li>
-        <li>Offices</li>
-        <li>About</li>
-        <li>Contact</li>
-    </ul>
-    <div className="footer-social-icon">
-        <div className="footer-icon-container">
-            <img src="\assets\instagram_icon.png" alt="" />
-         </div>
+const Footer = () => {
+  const footerLinks = ['Company', 'Products', 'Offices', 'About', 'Contact'];
+  const socialIcons = [
+    { name: 'Instagram', path: '/assets/instagram_icon.png' },
+    { name: 'Pinterest', path: '/assets/pinterest_icon.png' }, // Corrected typo
+    { name: 'WhatsApp', path: '/assets/whatsapp_icon.png' },
+  ];
 
-         <div className="footer-icon-container">
-            <img src="\assets\pintester_icon.png" alt="" />
-         </div>
+  return (
+    <footer className="footer-joyful">
+      <div className="footer-joyful-container">
+        <div className="footer-about">
+          <div className="footer-logo-joyful">
+            <img src="/assets/logo_big.png" alt="Shopper Logo" />
+            <p>SHOPPER</p>
+          </div>
+          <p>Your one-stop shop for the latest trends in fashion. Discover joy in every purchase.</p>
+        </div>
 
-         <div className="footer-icon-container">
-            <img src="\assets\whatsapp_icon.png" alt="" />
-         </div>
-    </div>
+        <div className="footer-links-column">
+          <h3>Quick Links</h3>
+          <ul className="footer-links-joyful">
+            {footerLinks.map((link) => (
+              <li key={link}>
+                <a href="#!">{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-    <div className="footer-copyright">
-        <hr/>
-        <p>Copyright @ 2025</p>
-    </div>
-    </div> );
-}
+        <div className="footer-socials-column">
+          <h3>Follow Us</h3>
+          <div className="footer-social-icons-joyful">
+            {socialIcons.map((social) => (
+              <a href="#!" key={social.name} aria-label={social.name} target="_blank" rel="noopener noreferrer">
+                <img src={social.path} alt={`${social.name} icon`} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-copyright-joyful">
+        <p>&copy; {new Date().getFullYear()} SHOPPER. All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

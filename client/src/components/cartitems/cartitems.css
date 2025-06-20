@@ -1,108 +1,241 @@
-.cartitems {
-  margin: 100px 170px;  
+/* General Container */
+.cart-items-joyful {
+  max-width: 1280px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: var(--font-secondary);
 }
 
-.cartitems hr {
-    height:3px;
-    background: #e2e2e2;
-    border: 0;
-}
-.cartitems-format-main {
-   display: grid;
-   grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr; 
-   align-items: center;
-   gap: 75px;
-   padding: 20px 0px;
-   color: #454545;
-   font-size: 18px;
-   font-weight: 600;
+/* Header */
+.cart-items-header-joyful {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-light-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.cartitems-format {
-  font-size: 17px;
-  font-weight: 700;
+/* Cart Item Row */
+.cart-item-row-joyful {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.carticon-product-icon {
-  height: 62px;
-
-}
-
-.cartitems-remove-icon {
- width: 15px; 
- margin: 0px 40px;
- cursor: pointer;
-}
-
-.cartitems-quantity {
-  width:64px;
-  height: 50px;
-  border: 1px solid #454545;
-  background: white;
-}
-
-.cartitems-down {
-display: flex;
-margin: 100px 0px;
-}
-.cartitems-total {
-  flex: 1;
+.cart-item-product-joyful {
   display: flex;
-  flex-direction: column;
-  margin-right: 200px;
-  gap: 40px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.cartitems-total-items {
- display: flex;
- justify-content: space-between;
- padding: 15px 0px;
+.cart-item-product-joyful img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.cartitems-total button {
-  width:262px;
-  height:58px;
-  outline: none;
-  border: none;
-  background: #ff5a5a;
-  color: white;
-  font-size: 19px;
+.cart-item-product-joyful p {
   font-weight: 600;
-  cursor: pointer;
+  color: var(--text-color);
 }
 
-.cartitems-promocode {
+.cart-item-price-joyful,
+.cart-item-total-joyful {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.cart-item-quantity-joyful {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+}
+
+.cart-item-remove-joyful {
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: var(--transition-smooth);
+  justify-self: center;
+}
+
+.cart-item-remove-joyful:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Cart Summary Section */
+.cart-summary-joyful {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.cart-totals-joyful {
   flex: 1;
-  font-size: 16px;
-  font-weight: 600;
-}
-.cartitems-promocode p{
-  color: #555;
-}
-.cartitem-promobox {
-  width: 504px;
-  margin-top: 15px;
-  padding-left: 20px;
-  height: 58px;
-  background: #eaeaeaea;
+  min-width: 300px;
 }
 
-.cartitem-promobox input {
+.cart-totals-joyful h3 {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.cart-total-item-joyful {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-total-item-joyful:last-child {
+  border-bottom: none;
+}
+
+.cart-total-item-joyful h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.cart-totals-joyful button {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: white;
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.cart-totals-joyful button:hover {
+  background: var(--primary-dark-color);
+  transform: translateY(-2px);
+}
+
+/* Promo Code Section */
+.cart-promo-joyful {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cart-promo-joyful p {
+  color: var(--text-light-color);
+  margin-bottom: 1rem;
+}
+
+.cart-promo-box-joyful {
+  display: flex;
+  background-color: var(--background-light-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-promo-box-joyful input {
+  flex-grow: 1;
   border: none;
   outline: none;
-  background:transparent;
-  font-size: 16px;
-  width: 330px;
-  height: 50px;
-
+  padding: 1rem;
+  background: transparent;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
 }
 
-.cartitem-promobox button {
- width: 170px;
- height: 58px;
- font-size: 16px;
-  background: black;
+.cart-promo-box-joyful button {
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: var(--text-color);
   color: white;
   cursor: pointer;
+  transition: var(--transition-smooth);
 }
 
+.cart-promo-box-joyful button:hover {
+  background-color: #000;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .cart-items-header-joyful {
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .cart-items-header-joyful :nth-child(5),
+  .cart-items-header-joyful :nth-child(6) {
+    display: none;
+  }
+
+  .cart-item-row-joyful {
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cart-item-total-joyful,
+  .cart-item-remove-joyful {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-items-joyful {
+    padding: 1rem;
+  }
+
+  .cart-items-header-joyful {
+    display: none;
+  }
+
+  .cart-item-row-joyful {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .cart-item-product-joyful {
+    flex-direction: row;
+  }
+
+  .cart-item-price-joyful::before,
+  .cart-item-quantity-joyful::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-light-color);
+  }
+
+  .cart-item-price-joyful,
+  .cart-item-quantity-joyful {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cart-item-remove-joyful {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}

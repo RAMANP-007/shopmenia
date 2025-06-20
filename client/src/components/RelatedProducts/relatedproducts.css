@@ -1,28 +1,45 @@
-.realtedproducts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    height: 90vh;
+.related-products-joyful {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.realtedproducts h1 {
-    color: #171717;
-    font-size:50px;
-    font-weight: 600;
-
+.related-products-joyful h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.realtedproducts hr {
-    width: 200px;
-    height: 6px;
-    border-radius: 10px;
-    background: #252525;
-
+.related-products-joyful h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: var(--gradient-warm);
+  border-radius: 10px;
 }
 
-.relatedproducts-item {
-    margin-top: 50px;
-    display: flex;
-    gap: 30px;
+.related-products-grid-joyful {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .related-products-joyful h2 {
+    font-size: 2rem;
+  }
 }

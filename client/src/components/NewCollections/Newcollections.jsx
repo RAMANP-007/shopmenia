@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './newcollections.css';
 import Item from '../item/Item.jsx';
 
-function Newcollection() {
-  const [newcollection, setNewcollection] = useState([]);
+const NewCollections = () => {
+  const [newCollection, setNewCollection] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:8000/newcollection')
       .then((res) => res.json())
       .then((data) => {
-        setNewcollection(data);
+        setNewCollection(data);
       })
       .catch((err) => {
         console.error("Error fetching new collection:", err);
@@ -17,22 +17,25 @@ function Newcollection() {
   }, []);
 
   return (
-    <div className="newcollections">
-      <h1>NEW COLLECTIONS</h1>
-      <hr />
-      <div className="collections">
-        {newcollection.map((item, i) => (
+    <section className="new-collections-modern">
+      <div className="new-collections-header">
+        <h2>New Collections</h2>
+        <p>Discover our latest arrivals and refresh your wardrobe.</p>
+      </div>
+      <div className="new-collections-grid">
+        {newCollection.map((item) => (
           <Item
-            key={i}
+            key={item.id}
             id={item.id}
+            name={item.name}
             image={item.image}
             new_price={item.new_price}
             old_price={item.old_price}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default Newcollection;
+export default NewCollections;

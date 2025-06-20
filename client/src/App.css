@@ -1,0 +1,70 @@
+/* Core Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Joyful Button Styles */
+.btn-modern {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--background-color);
+  background: var(--primary-color);
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Fully rounded corners */
+  border: 2px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-modern:hover {
+  transform: scale(1.05) translateY(-2px);
+  background: var(--secondary-color);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.btn-secondary {
+  background: var(--surface-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Joyful Card Style */
+.card-modern {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px; /* Softer, rounded corners */
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Page Content Animation */
+.page-content {
+  animation: var(--animation-slide-up) forwards;
+}

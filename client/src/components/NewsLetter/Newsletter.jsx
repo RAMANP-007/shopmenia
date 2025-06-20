@@ -1,18 +1,19 @@
 import React from 'react';
 import './Newsletter.css';
 
-function Newsletter() {
-    return ( <div className="newsletter">
-     <h1>Get Exclusive Offers On Your Email</h1>
-     <p>Subscribe To Our Newsletter And Stay Updated</p>
-     <div className="div">
-        <input type='email' placeholder='Enter Your Email Id' />
-        <button>Subscribe</button>
-     </div>
-</div>
-     
-
-);
-}
+const Newsletter = () => {
+  return (
+    <section className="newsletter-modern">
+      <div className="newsletter-content">
+        <h2>Get Exclusive Offers On Your Email</h2>
+        <p>Subscribe to our newsletter and stay updated with the latest trends and promotions.</p>
+        <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" className="btn-modern">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  );
+};
 
 export default Newsletter;

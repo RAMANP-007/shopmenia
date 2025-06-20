@@ -1,19 +1,19 @@
 import React from 'react';
 import './offers.css';
 
-function Offers() {
-    return ( <div className="offers">
-          <div className="offers-left">
-            <h1>Exclusive</h1>
-            <h1>Offers For You</h1>
-            <p>ONLY ON BEST SELLERS PRODUCTS</p>
-            <button>Check Now</button>
-          </div>
-          <div className="offers-right">
-            <img src="\assets\exclusive_image.png" alt="exclusive image" />
-            
-          </div>
-    </div> );
-}
+const Offers = () => {
+  return (
+    <section className="offers-joyful">
+      <div className="offers-left-joyful">
+        <h2>Exclusive Offers For You</h2>
+        <p>Only on best-selling products. Don't miss out!</p>
+        <button className="btn-modern">Check Now</button>
+      </div>
+      <div className="offers-right-joyful">
+        <img src="/assets/exclusive_image.png" alt="Exclusive Offer" />
+      </div>
+    </section>
+  );
+};
 
 export default Offers;

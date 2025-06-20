@@ -1,55 +1,69 @@
-.newsletter {
-    width: 65%;
-    height: 40vh;
-    display: flex;
+.newsletter-modern {
+  padding: 4rem 2rem;
+  background-color: var(--primary-light-color);
+  text-align: center;
+  margin: 4rem 2rem;
+  border-radius: 12px;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  max-width: 400px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.newsletter-form .btn-modern {
+  padding: 0.8rem 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .newsletter-modern {
+    margin: 3rem 1rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .newsletter-form {
     flex-direction: column;
-    align-items: center;
-    margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg , #fde1ff 0%, #e1ffea22 60%);
-    gap: 30px;
+    align-items: stretch;
+  }
+  
+  .newsletter-form input {
+    max-width: 100%;
+  }
 }
-
-.newsletter h1 {
-   color: #454545;
-   font-size: 55px;
-   font-weight: 600; 
-}
-
-.newsletter p{
-    color: #454545;
-    font-size: 20px;
-}
-
-.div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    width: 730px;
-    height: 70x;
-    border-radius: 80px;
-    border: 1px solid #e3e3e3;
-}
-
-.newsletter input {
-    width: 500px;
-    margin-left: 30px;
-    border: none;
-    color: #616161;
-    font-family: poppins;
-    font-size: 16px;
-}
-
-.newsletter div button {
-    width: 210px;
-    height: 70px;
-    border-radius: 80px;
-    background: black;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-

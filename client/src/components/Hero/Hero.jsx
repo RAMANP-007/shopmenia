@@ -1,29 +1,26 @@
 import React from 'react';
 import './hero.css';
+import { Link } from 'react-router-dom';
 
-function Hero() {
-    return (
-        <div className="hero">
-            <div className="hero-left">
-                <h2>NEW ARRIVALS ONLY</h2>
-                <div className="hero-text">
-                    <div className="hero-hand-icon">
-                        <p>NEW</p>
-                        <img src="/assets/hand_icon.png" alt="Hand Icon" />
-                    </div>
-                    <p>collections</p>
-                    <p>for everyone</p>
-                </div>
-                <div className="hero-latest-button">
-                    <span>Latest Collections</span>
-                    <img src="/assets/arrow.png" alt="Arrow" />
-                </div>
-            </div>
-            <div className="hero-right">
-                <img src="/assets/hero_image.png" alt="Hero" />
-            </div>
+const Hero = () => {
+  return (
+    <section className="hero-joyful">
+      <div className="hero-content-joyful">
+        <h1>Discover Your Signature Style</h1>
+        <p>
+          Explore our curated collection of fashion-forward apparel and accessories, designed to elevate your wardrobe for every occasion.
+        </p>
+        <div className="hero-cta-joyful">
+          <Link to="/mens">
+            <button className="btn-modern">Shop Men</button>
+          </Link>
+          <Link to="/womens">
+            <button className="btn-modern btn-secondary">Shop Women</button>
+          </Link>
         </div>
-    );
-}
+      </div>
+    </section>
+  );
+};
 
 export default Hero;

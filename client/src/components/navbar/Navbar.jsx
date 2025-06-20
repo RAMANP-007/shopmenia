@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../context/Shopcontext';
@@ -7,67 +7,74 @@ const Navbar = () => {
   const { GetTotalCartItems } = useContext(ShopContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const path = location.pathname;
-
-  const getCurrentMenu = () => {
-    if (path === '/') return 'Shop';
-    if (path.includes('mens')) return 'Men';  
-    if (path.includes('womens')) return 'Women';
-    if (path.includes('kids')) return 'Kids';
-    return '';
-  };
-
-  const menu = getCurrentMenu();
+  const [menuActive, setMenuActive] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem('auth-token');
     navigate('/');
-    setTimeout(() => {
-      window.location.reload();
-    }, 100); // Small delay
+    // Using navigate should be enough, but keeping reload for legacy reasons if needed.
+    // window.location.reload(); 
   };
 
-  return (
-    <div className="navbar">
-      <div className="nav-logo">
-        <img src="/assets/logo.png" alt="Logo" />
-        <p>SHOPER</p>
-      </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-      <ul className="nav-menu">
-        <li>
-          <Link to="/" style={{ textDecoration: 'none' }}>Shop</Link>
-          {menu === 'Shop' && <hr />}
-        </li>
-        <li>
-          <Link to="/kids" style={{ textDecoration: 'none' }}>Kids</Link>
-          {menu === 'Kids' && <hr />}
-        </li>
-        <li>
-          <Link to="/mens" style={{ textDecoration: 'none' }}>Men</Link>
-          {menu === 'Men' && <hr />}
-        </li>
-        <li>
-          <Link to="/womens" style={{ textDecoration: 'none' }}>Women</Link>
-          {menu === 'Women' && <hr />}
-        </li>
+  useEffect(() => {
+    setMenuActive(false);
+  }, [location.pathname]);
+
+  const menuItems = [
+    { name: 'Shop', path: '/' },
+    { name: 'Men', path: '/mens' },
+    { name: 'Women', path: '/womens' },
+    { name: 'Kids', path: '/kids' },
+  ];
+
+  return (
+    <nav className={`navbar-joyful ${isScrolled ? 'scrolled' : ''}`}>
+      <Link to="/" className="nav-logo-joyful">
+        <img src="/assets/logo.png" alt="Shoper Logo" />
+        <p>SHOPER</p>
+      </Link>
+
+      <ul className={`nav-menu-joyful ${menuActive ? 'active' : ''}`}>
+        {menuItems.map((item) => (
+          <li key={item.name}>
+            <Link 
+              to={item.path} 
+              className={location.pathname === item.path ? 'active' : ''}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
 
-      <div className="nav-login-cart">
+      <div className="nav-login-cart-joyful">
         {localStorage.getItem('auth-token') ? (
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout} className="btn-modern">Logout</button>
         ) : (
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <button>Login</button>
+          <Link to="/login">
+            <button className="btn-modern">Login</button>
           </Link>
         )}
         
-        <Link to="/cart" style={{ textDecoration: 'none' }}>
+        <Link to="/cart" className="nav-cart-container">
           <img src="/assets/cart_icon.png" alt="Cart" />
+          <div className="nav-cart-count-joyful">{GetTotalCartItems()}</div>
         </Link>
-        <div className="nav-cart-count">{GetTotalCartItems()}</div>
       </div>
-    </div>
+
+      <button className="nav-menu-toggle" onClick={() => setMenuActive(!menuActive)}>
+        &#9776; {/* Hamburger Icon */}
+      </button>
+    </nav>
   );
 };
 
