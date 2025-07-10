@@ -1,0 +1,71 @@
+.hero-joyful {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  background: var(--warm-gradient);
+  color: var(--background-color);
+  text-align: center;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content-joyful {
+  max-width: 800px;
+  animation: var(--animation-slide-up) 1s ease-out forwards;
+  z-index: 2;
+}
+
+.hero-content-joyful h1 {
+  font-family: var(--font-primary);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--background-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content-joyful p {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+.hero-cta-joyful {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Add a subtle animation to the buttons on load */
+.hero-cta-joyful .btn-modern {
+  animation: slideUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-joyful {
+    padding: 4rem 1rem;
+    min-height: 70vh;
+  }
+
+  .hero-content-joyful h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content-joyful p {
+    font-size: 1.1rem;
+  }
+
+  .hero-cta-joyful {
+    flex-direction: column;
+    align-items: center;
+  }
+}

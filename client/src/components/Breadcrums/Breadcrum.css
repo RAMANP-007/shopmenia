@@ -1,0 +1,38 @@
+.breadcrum-joyful {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light-color);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-secondary);
+  margin: 2rem 0;
+  padding: 0 2rem;
+  text-transform: capitalize;
+  flex-wrap: wrap;
+}
+
+.breadcrum-joyful span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrum-joyful span:last-child {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.breadcrum-joyful .separator {
+  font-size: 1.25rem;
+  color: var(--border-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .breadcrum-joyful {
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+}

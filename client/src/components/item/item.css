@@ -1,0 +1,63 @@
+.item-joyful {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  text-align: left;
+  transition: var(--transition-smooth);
+  width: 100%;
+  max-width: 320px;
+}
+
+.item-joyful:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.item-image-joyful {
+  overflow: hidden;
+}
+
+.item-joyful img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.item-joyful:hover img {
+  transform: scale(1.05);
+}
+
+.item-details-joyful {
+  padding: 1rem 1.25rem;
+}
+
+.item-details-joyful h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-prices-joyful {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-price-new-joyful {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.item-price-old-joyful {
+  font-size: 1rem;
+  color: var(--text-light-color);
+  text-decoration: line-through;
+}

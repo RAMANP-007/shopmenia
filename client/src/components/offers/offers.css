@@ -1,0 +1,74 @@
+.offers-joyful {
+  width: 90%;
+  max-width: 1280px;
+  margin: 4rem auto;
+  padding: 4rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--warm-gradient);
+  border-radius: 20px;
+}
+
+.offers-left-joyful {
+  flex: 1;
+  color: var(--background-color);
+}
+
+.offers-left-joyful h2 {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.offers-left-joyful p {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.offers-right-joyful {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.offers-right-joyful img {
+  max-width: 300px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .offers-joyful {
+    padding: 3rem 4rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .offers-right-joyful {
+    justify-content: center;
+  }
+
+  .offers-right-joyful img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-joyful {
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+  .offers-left-joyful h2 {
+    font-size: 2.5rem;
+  }
+
+  .offers-left-joyful p {
+    font-size: 1rem;
+  }
+}

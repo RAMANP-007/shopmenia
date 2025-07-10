@@ -1,0 +1,64 @@
+.popular-joyful {
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.popular-header-joyful {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.popular-header-joyful h2 {
+  font-family: var(--font-primary);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Playful underline effect */
+.popular-header-joyful h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.popular-header-joyful p {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  color: var(--text-light-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.popular-items-joyful {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .popular-joyful {
+    padding: 3rem 1rem;
+  }
+
+  .popular-header-joyful h2 {
+    font-size: 2.2rem;
+  }
+}
