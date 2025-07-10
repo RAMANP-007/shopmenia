@@ -1,6 +1,7 @@
 .breadcrum-joyful {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   color: var(--text-light-color);
   font-size: 1rem;
@@ -9,21 +10,39 @@
   margin: 2rem 0;
   padding: 0 2rem;
   text-transform: capitalize;
-  flex-wrap: wrap;
 }
 
-.breadcrum-joyful span {
+.breadcrumb-list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 0.5rem;
 }
 
-.breadcrum-joyful span:last-child {
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+  color: var(--text-light-color);
+}
+
+.breadcrumb-list li a {
+  color: var(--text-light-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb-list li a:hover {
+  color: var(--text-color);
+}
+
+.breadcrumb-list .active {
   font-weight: 600;
   color: var(--text-color);
 }
 
-.breadcrum-joyful .separator {
+.separator {
   font-size: 1.25rem;
   color: var(--border-color);
 }
