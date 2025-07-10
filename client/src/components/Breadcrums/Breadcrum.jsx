@@ -1,23 +1,31 @@
 import React from 'react';
-import './breadcrum.css';
+import './Breadcrum.css';
 
-const Breadcrum = (props) => {
-  const { product } = props;
+const Breadcrum = ({ product }) => {
+  if (!product) return null;
 
-  if (!product) {
-    return null; // Don't render if there's no product
-  }
+  const { category, name } = product;
 
   return (
-    <div className="breadcrum-joyful">
-      <span>HOME</span>
-      <span className="separator">{'>'}</span>
-      <span>SHOP</span>
-      <span className="separator">{'>'}</span>
-      <span>{product.category}</span>
-      <span className="separator">{'>'}</span>
-      <span>{product.name}</span>
-    </div>
+    <nav className="breadcrum-joyful" aria-label="breadcrumb">
+      <ol className="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <span className="separator">{'>'}</span>
+        <li><a href="/shop">Shop</a></li>
+        {category && (
+          <>
+            <span className="separator">{'>'}</span>
+            <li><a href={`/shop/${category.toLowerCase()}`}>{category}</a></li>
+          </>
+        )}
+        {name && (
+          <>
+            <span className="separator">{'>'}</span>
+            <li className="active">{name}</li>
+          </>
+        )}
+      </ol>
+    </nav>
   );
 };
 
